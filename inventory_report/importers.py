@@ -32,8 +32,11 @@ class JsonImporter(Importer):
                     )
 
                     produtos.append(produto)
-                
+
                 return produtos
+
+        except FileNotFoundError:
+            raise FileNotFoundError("Arquivo não encontrado")
 
 
 class CsvImporter:
